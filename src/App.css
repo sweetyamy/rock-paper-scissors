@@ -1,38 +1,102 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+/* bg color */
+body {
+  transition: background-color 0.3s ease; 
   min-height: 100vh;
+  margin: 0;
+}
+
+.win-background {
+  background-color: orange; 
+  background-image: url('./img/firecracker.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.lose-background {
+  background-color: gray; 
+  background-image: url('./img/sad.jpg'); 
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.container {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: center; 
+  text-align: center;
+  padding: 5rem;
+  gap: 20px;
+}
+
+.boxes {
+  display: flex; 
+  justify-content: center; 
+  gap: 10px; 
+}
+
+.box {
+  border: 2px solid rgb(183, 183, 183);
+  background-color: white;
+  width: 300px;
+  margin: 5px;
+  padding: 15px;
+  border-radius: 1rem; 
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); 
+}
+
+.win-border {
+  border-color: rgb(211, 89, 1) !important;
+}
+
+.lose-border {
+  border-color: rgb(108, 108, 108) !important;
+}
+
+.item-img {
+  width: 90%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* buttons */
+.btn-game {
+  margin-right: 5px;
+}
+
+.btn-game:last-child {
+  margin-right: 0; /* 마지막 버튼에는 마진을 추가하지 않기 */
+}
+
+/* game record */
+.game-record {
+  background-color: white;
+  position: fixed; 
+  top: 0; 
+  width: 100%; 
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+  gap: 15px; 
+  padding: 10px; 
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); 
+}
+
+/* Bootstrap Modal */
+.custom-modal .modal-dialog {
+  width: 200px;
+  max-width: 200px;
+  margin: auto;
+}
+
+.custom-modal .modal-content {
+  height: 150px;
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  align-items: center;
+  text-align: center;
 }
