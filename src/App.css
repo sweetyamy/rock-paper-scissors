@@ -21,6 +21,11 @@ body {
   background-repeat: no-repeat;
 }
 
+.tie-background {
+  background-color: white;
+  background-image: none; 
+}
+
 .container {
   display: flex;
   flex-direction: column;
@@ -44,6 +49,15 @@ body {
   padding: 15px;
   border-radius: 1rem; 
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); 
+  position: relative; /* 박스를 어둡게 하기위해 */
+}
+
+.darken {
+  background-color: rgba(255, 255, 255, 0.2);  /* 루저 박스를 어둡게 */
+}
+
+.darken img {
+  filter: brightness(70%); 
 }
 
 .win-border {

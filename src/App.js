@@ -75,6 +75,7 @@ function App() {
       body.className = 'lose-background';
       setComputerWins((prevComputerWins) => prevComputerWins + 1);
     } else if (result === 'Tie!') {
+      body.className = 'tie-background';
       setTieCount((prevTieCount) => prevTieCount + 1);
     } else {
       body.className = '';
@@ -135,8 +136,8 @@ function App() {
     setComputerWins(0);
     setTieCount(0);
     setResult('');
-    setUserSelect(null);
-    setComputerSelect(null);
+    setUserSelect(randomChoice());
+    setComputerSelect(randomChoice());
     document.body.className = ''; // 배경 리셋
   };
 

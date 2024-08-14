@@ -5,14 +5,26 @@ const Box = (props) => {
 
   // change box outline color based on result
   const getBoxClass = () => {
-    if (props.result === 'You win!') {
-      return 'box win-border';
-    } else if (props.result === 'You lose!') {
-      return 'box lose-border';
-    } else {
-      return 'box';
+    let boxClass = 'box';
+    if (props.result === 'You win!' && props.title === 'Computer') {
+      boxClass += ' lose-border darken';
+    } else if (props.result === 'You lose!' && props.title === 'User') {
+      boxClass += ' lose-border darken';
+    } else if (props.result === 'You win!' && props.title === 'User') {
+      boxClass += ' win-border';
     }
+    return boxClass;
   };
+
+  // const getBoxClass = () => {
+  //   if (props.result === 'You win!') {
+  //     return 'box win-border';
+  //   } else if (props.result === 'You lose!') {
+  //     return 'box lose-border';
+  //   } else {
+  //     return 'box';
+  //   }
+  // };
 
   return (
     <div className={getBoxClass()}>
