@@ -1,41 +1,42 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-const Box = (props) => {
-  console.log('props', props);
+class Box extends Component {
+  constructor(props) {
+    super(props);
+    this.getBoxClass = this.getBoxClass.bind(this);
+  }
 
   // change box outline color based on result
-  const getBoxClass = () => {
+  getBoxClass() {
     let boxClass = 'box';
-    if (props.result === 'You win!' && props.title === 'Computer') {
+    if (this.props.result === 'You win!' && this.props.title === 'Computer') {
       boxClass += ' lose-border darken';
-    } else if (props.result === 'You lose!' && props.title === 'User') {
+    } else if (
+      this.props.result === 'You lose!' &&
+      this.props.title === 'User'
+    ) {
       boxClass += ' lose-border darken';
-    } else if (props.result === 'You win!' && props.title === 'User') {
+    } else if (
+      this.props.result === 'You win!' &&
+      this.props.title === 'User'
+    ) {
       boxClass += ' win-border';
     }
     return boxClass;
-  };
+  }
 
-  // const getBoxClass = () => {
-  //   if (props.result === 'You win!') {
-  //     return 'box win-border';
-  //   } else if (props.result === 'You lose!') {
-  //     return 'box lose-border';
-  //   } else {
-  //     return 'box';
-  //   }
-  // };
-
-  return (
-    <div className={getBoxClass()}>
-      <h1>{props.title}</h1>
-      <img
-        src={props.item && props.item.img}
-        className='item-img'
-        alt={props.item && props.item.alt}
-      />
-    </div>
-  );
-};
+  render() {
+    return (
+      <div className={this.getBoxClass()}>
+        <h1>{this.props.title}</h1>
+        <img
+          src={this.props.item && this.props.item.img}
+          className='item-img'
+          alt={this.props.item && this.props.item.alt}
+        />
+      </div>
+    );
+  }
+}
 
 export default Box;
